@@ -29,8 +29,8 @@
             display: flex;
             flex-direction: column;
         }
-        .book-card:hover { transform: translateY(-10px); }
-        .book-img { width: 100%; height: 300px; object-fit: cover; background: #ddd; }
+       
+       
         .book-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
         .book-title { font-size: 1.2rem; margin-bottom: 0.5rem; color: #2c3e50; }
         .book-author { font-size: 0.9rem; color: #7f8c8d; margin-bottom: 1rem; }
@@ -48,7 +48,7 @@
             margin-top: 1rem;
             border-radius: 4px;
         }
-        .buy-btn:hover { background: #219150; }
+       
 
         
         @media (max-width: 600px) {
@@ -71,12 +71,12 @@
     <script>
      
         const books = [
-            { title: "The Great Gatsby", author: "F. Scott Fitzgerald", price: "$15.99", img: "https://placeholder.com" },
-            { title: "1984", author: "George Orwell", price: "$12.50", img: "https://placeholder.com" },
-            { title: "To Kill a Mockingbird", author: "Harper Lee", price: "$14.20", img: "https://placeholder.com" },
-            { title: "Brave New World", author: "Aldous Huxley", price: "$11.95", img: "https://placeholder.com" },
-            { title: "The Hobbit", author: "J.R.R. Tolkien", price: "$18.00", img: "https://placeholder.com" },
-            { title: "Fahrenheit 451", author: "Ray Bradbury", price: "$13.40", img: "https://placeholder.com" }
+            { title: "Python", author: "Sathiya", price: "100/-" },
+            { title: "Java", author: "Sathiya", price: "200/-" },
+            { title: "DSA", author: "Sathiya", price: "300/-" },
+            { title: "C", author: "Sathiya", price: "400/-" },
+            { title: "Algorithm", author: "Sathiya", price: "500/-" },
+            { title: "LeetCode", author: "Sathiya", price: "600/-" }
         ];
 
        
@@ -88,24 +88,24 @@
                 card.className = 'book-card';
                 
                 card.innerHTML = `
-                    <img src="${book.img}" alt="${book.title}" class="book-img">
+                    <img alt="${book.title}">
                     <div class="book-info">
                         <h2 class="book-title">${book.title}</h2>
                         <p class="book-author">by ${book.author}</p>
                         <p class="book-price">${book.price}</p>
                         <button class="buy-btn" onclick="addToCart('${book.title}')">Add to Cart</button>
-                    </div>
+                    </div>  
                 `;
                 grid.appendChild(card);
             });
         }
 
-        // Simple action handler
+        
         function addToCart(title) {
             alert(title + " added to your cart!");
         }
 
-        // Initialize display on load
+        
         window.onload = displayBooks;
     </script>
 </body>
